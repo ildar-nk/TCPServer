@@ -1,5 +1,7 @@
 package org.example.server.app.handler;
 
+import org.example.json.JSONEncoder;
+import org.example.server.app.domain.Transaction;
 import org.example.server.framework.handler.Handler;
 import org.example.server.framework.http.ContentTypes;
 import org.example.server.framework.http.Request;
@@ -10,8 +12,21 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Instant;
+import java.util.UUID;
 
 public class MainHandler {
+
+    private final JSONEncoder encoder;
+
+    public MainHandler(JSONEncoder encoder) {
+
+        this.encoder = encoder;
+
+    }
+    public void getSingle(Request request, OutputStream response){
+        ResponseUtils.write(response, ContentTypes.APPLICATION_JSON, encoder.encode(new Transaction(UUID.randomUUID().toString(), "45** **** **** **01", "45** **** **** **02", 10_000_00, Instant.now().getEpochSecond())));
+    }
 
     public void hello(Request request, OutputStream response) {
         ResponseUtils.write(response, ContentTypes.TEXT_PLAIN, "Hello");
