@@ -29,6 +29,8 @@ public class ServerMain {
         //            }
         server.register("/hello", mainHandler::hello);
         server.register("/hi", mainHandler::hi);
+        server.register("/favicon.ico", mainHandler::favicon);
+
         server.serve(9999);
     }
 }
