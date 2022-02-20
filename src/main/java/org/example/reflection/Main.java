@@ -13,7 +13,7 @@ public class Main {
         System.out.println(json);
 
         final JSONDecoder decoder = new JSONDecoder();
-        final Object result = decoder.decode(json, Patient.class);
+        final Patient result = decoder.decode(json, Patient.class);
         System.out.println("result = " + result);
 
     }

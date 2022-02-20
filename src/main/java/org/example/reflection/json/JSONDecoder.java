@@ -3,9 +3,9 @@ package org.example.reflection.json;
 import java.lang.reflect.Field;
 
 public class JSONDecoder {
-    public Object decode (final String json, final Class<?> clazz){
+    public <T> T decode (final String json, final Class<T> clazz){
         try {
-            final Object object = clazz.newInstance();
+            final T object = clazz.newInstance();
             final String stripped = json.substring(1, json.length() - 1);
             final String[] parts = stripped.split(",");
 //            System.out.println(stripped);
