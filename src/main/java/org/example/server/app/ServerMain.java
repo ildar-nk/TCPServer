@@ -1,14 +1,10 @@
 package org.example.server.app;
 
-import org.example.json.JSONEncoder;
+import org.example.reflection.json.JSONEncoder;
 import org.example.server.app.handler.MainHandler;
 import org.example.server.framework.Server;
-import org.example.server.framework.handler.Handler;
-import org.example.server.framework.http.Request;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 
 public class ServerMain {
     public static void main(String[] args) throws IOException {

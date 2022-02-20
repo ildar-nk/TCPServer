@@ -1,4 +1,4 @@
-package org.example.json;
+package org.example.reflection.json;
 
 import java.io.StringWriter;
 import java.lang.reflect.Field;

@@ -1,15 +1,13 @@
 package org.example.server.app.handler;
 
-import org.example.json.JSONEncoder;
+import org.example.reflection.json.JSONEncoder;
 import org.example.server.app.domain.Transaction;
-import org.example.server.framework.handler.Handler;
 import org.example.server.framework.http.ContentTypes;
 import org.example.server.framework.http.Request;
 import org.example.server.framework.http.ResponseUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Instant;

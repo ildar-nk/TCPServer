@@ -1,7 +1,9 @@
 package org.example.reflection;
 
-import org.example.json.JSONEncoder;
+import org.example.reflection.json.JSONDecoder;
+import org.example.reflection.json.JSONEncoder;
 import org.example.reflection.domain.Patient;
+import org.example.server.app.domain.Transaction;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,5 +11,10 @@ public class Main {
         final JSONEncoder encoder = new JSONEncoder();
         final String json = encoder.encode(patient);
         System.out.println(json);
+
+        final JSONDecoder decoder = new JSONDecoder();
+        final Object result = decoder.decode(json, Patient.class);
+        System.out.println("result = " + result);
+
     }
 }
